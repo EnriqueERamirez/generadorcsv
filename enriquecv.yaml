@@ -1,0 +1,60 @@
+#Lenguage: 1) Español 2) Ingles
+BasicInfo:
+  - Name: "Enrique Emanuel Ramirez Flores"
+    Leng: 1
+# cat : 1) Investigacion 2) Trabajo
+About:
+  - categoria: 1
+    texto: "Soy una persona curioso que espera lograr superarse continuamente a lo largo de esta vida"
+  - categoria: 2
+    texto: "Soy una persona que busca solucionar y optimizar todos los problemas que se presenten"
+Contact:
+
+# Areas de trabajo: 1) electronica 2) electricidad 3) informatica negocio 4) informatica maquina 5) informatica altonivel 6) arquitectura software 7) economica 8) liderasgo 9)eduacion 10) analisis de datos 
+# 11) DB 12) salud 13) intrumentacion 14) QA 15) hacking 16) QAE 17) Operaciones 18) comunicaciones 19) Inteligencia Artifical 20) Robotica 21) Sensores 22) Simulacion 23) Matematica aplicada 24) Fisica
+# 25) Materiales
+# nivel de conocimiento: 1-10 trabajo
+# nivel de conocimiento: 1-20 real
+LenguagePrograming:
+  - name: "Python"
+    Category: [1,2,5,7,10]
+    Level: 8
+  - name: "go"
+    Category: [4,6]
+    Level: 8
+  - name: "net"
+    Category: [4,6]
+    Level: 8
+  - name: "java"
+    Category: [4,6]
+    Level: 8
+  - name: "rust"
+    Category: [4,6]
+    Level: 8
+  - name: "c"
+    Category: [4,6]
+    Level: 8
+  - name: "c++"
+    Category: [4,6]
+    Level: 8
+  - name: "vbasic"
+    Category: [4,6]
+    Level: 8
+  - name: "esambler"
+    Category: [4,6]
+    Level: 8
+LenguageDB:
+#1) escrito 2) hablado 3) lectura 4) intepretado
+LenguageSpeak:
+TecnologiUse:
+TeoryManage:
+Skills:
+Study:
+Jobs:
+Proyects:
+Activitys:
+Papers:
+Books:
+Blogs:
+Certificates:
+Companys:
