@@ -2,14 +2,20 @@
 BasicInfo:
   - Name: "Enrique Emanuel Ramirez Flores"
     Leng: 1
+
 # cat : 1) Investigacion 2) Trabajo
 About:
   - categoria: 1
     texto: "Soy una persona curioso que espera lograr superarse continuamente a lo largo de esta vida"
   - categoria: 2
     texto: "Soy una persona que busca solucionar y optimizar todos los problemas que se presenten"
+#1) correo 2) numero 3) telefono
 Contact:
-
+  - Name: "Linkeding"
+    Type: 1
+    Url: ""
+    Leng: ""
+    categoria: 1
 # Areas de trabajo: 1) electronica 2) electricidad 3) informatica negocio 4) informatica maquina 5) informatica altonivel 6) arquitectura software 7) economica 8) liderasgo 9)eduacion 10) analisis de datos 
 # 11) DB 12) salud 13) intrumentacion 14) QA 15) hacking 16) QAE 17) Operaciones 18) comunicaciones 19) Inteligencia Artifical 20) Robotica 21) Sensores 22) Simulacion 23) Matematica aplicada 24) Fisica
 # 25) Materiales
@@ -44,17 +50,57 @@ LenguagePrograming:
     Category: [4,6]
     Level: 8
 LenguageDB:
+  - name: "Sql"
+    Level: 8
 #1) escrito 2) hablado 3) lectura 4) intepretado
 LenguageSpeak:
+  - Name: "Español"
+    Level: 10
+    Dominio: [1,2,3,4]
 TecnologiUse:
+  - Name: "Docker"
+    Level: 4 
+    Category: [5]
 TeoryManage:
+  - Name: "Circuito DC"
+    Category: [3]
 Skills:
+#1) terminado 2) proceso 3) titulacion
 Study:
+  - Name: "Ingenieria civil electronica"
+    Institute: "Universidad austral de chile"
+    DateRange: [2017, 2023]
+    Status: 3
 Jobs:
+  - Posicion: ""
+    RangeDate: ["",""]
+    Description: ""
+    Company: ""
+    Category: 3
+#1) private 2) public
 Proyects:
+  - Name: ""
+    Category: ""
+    Url: ""
+    Category: ""
 Activitys:
+  - name: "IEEE-extreme"
+    RangeDate: ["",""]
+    Description: ""
 Papers:
+  - Name: ""
+    Doi: ""
+    Abstract: ""
+    Category: 3
 Books:
 Blogs:
+  - Name: ""
+    Category: 3
+    Description: ""
+    Url: ""
 Certificates:
+  - name: "AWS"
+    Category: [4,6]
+    NumberSerie: 123123
+    Url: ""
 Companys:
