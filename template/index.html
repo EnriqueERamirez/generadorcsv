@@ -14,8 +14,8 @@
        <div class="resume_item resume_info">
 		<!--nombre del auto-->
          <div class="title">
-           <p class="bold">stephen colbert</p>
-           <p class="regular">Designer</p>
+			 <p class="bold">{{my_name}}</p>
+           <p class="regular">{{my_degree}}</p>
          </div>
 		<!--Metadatos-->
          <ul>
@@ -25,7 +25,7 @@
                <i class="fas fa-map-signs"></i>
              </div>
              <div class="data">
-               21 Street, Texas <br /> USA
+               {{my_address}}
              </div>
            </li>
            <li>
@@ -33,25 +33,19 @@
                <i class="fas fa-mobile-alt"></i>
              </div>
              <div class="data">
-               +324 4445678
+               {{my_numberphone}}
              </div>
            </li>
+		<!--Box data-->
            <li>
              <div class="icon">
                <i class="fas fa-envelope"></i>
              </div>
              <div class="data">
-               stephen@gmail.com
+               {{my_email}}
              </div>
            </li>
-           <li>
-             <div class="icon">
-               <i class="fab fa-weebly"></i>
-             </div>
-             <div class="data">
-               www.stephen.com
-             </div>
-           </li>
+		<!--endBox data-->
          </ul>
        </div>
 
@@ -201,7 +195,7 @@
         <div class="title">
            <p class="bold">About us</p>
          </div>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis illo fugit officiis distinctio culpa officia totam atque exercitationem inventore repudiandae?</p>
+        <p>{{my_about}}</p>
     </div>
     <div class="resume_item resume_work">
         <div class="title">

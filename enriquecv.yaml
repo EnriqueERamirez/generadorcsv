@@ -6,8 +6,10 @@ BasicInfo:
 # cat : 1) Investigacion 2) Trabajo
 About:
   - categoria: 1
+    Leng: 1
     texto: "Soy una persona curioso que espera lograr superarse continuamente a lo largo de esta vida"
   - categoria: 2
+    Leng: 1
     texto: "Soy una persona que busca solucionar y optimizar todos los problemas que se presenten"
 #1) correo 2) numero 3) telefono
 Contact:
@@ -65,6 +67,7 @@ TeoryManage:
   - Name: "Circuito DC"
     Category: [3]
 Skills:
+NormManage:
 #1) terminado 2) proceso 3) titulacion
 Study:
   - Name: "Ingenieria civil electronica"

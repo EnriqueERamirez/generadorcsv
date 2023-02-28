@@ -150,6 +150,7 @@ body {
 .resume .resume_left .resume_knows ul li {
   display: flex;
   margin-bottom: 10px;
+  margin-right: 1px;
   color: #b1eaff;
   justify-content: space-between;
   align-items: center;
