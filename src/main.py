@@ -8,9 +8,51 @@ my_name = "Frank Andrade"
 context = {
         'my_name': my_name,
         'my_degree': "ingenieriai civil electronica",
-        'my_address': "direccion de prueba",
-        'my_numberphone': "+58 99123123",
-        'my_email': "test@gmail.com",
+        'metadata': [
+                {
+                'icon': 'map-signs',
+                'data': "direccion de prueba",
+                },
+                {
+                'icon': 'mobile-alt',
+                'data': "+58 99123123",
+                },
+                {
+                'icon': 'envelope',
+                'data': "test@gmail.com",
+                },
+            ],
+        'listsocial': [
+                {
+                'icon': 'facebook-square',
+                'name': 'Facebook',
+                'data': "Stephen@facebook",
+                },
+                {
+                'icon': 'twitter-square',
+                'name': 'Twitter',
+                'data': "Stephen@twitter",
+                },
+            ],
+        'listworks': [
+                {
+                'datestart': '2011',
+                'dateend': '2012',
+                'title': 'Test',
+                'data': "asdasdasdasdasdasdasdasdasdasdasdasdasdasdasd",
+                },
+            ],
+        'listedu': [
+                {
+                'datestart': '2011',
+                'dateend': '2012',
+                'title': 'Test',
+                'data': "asdasdasdasdasdasdasdasdasdasdasdasdasdasdasd",
+                },
+            ],
+
+        'listlendev': ['python', 'java', '.net'],
+        'listknows': ['math', 'fisics', 'electronics'],
         'my_about': "askdjkasjdkasjdkj ajdkjakdjakdjk kasjdlajdoqwiujeokds aksdjaosed",
         }
 

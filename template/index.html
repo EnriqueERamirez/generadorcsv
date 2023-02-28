@@ -19,34 +19,18 @@
          </div>
 		<!--Metadatos-->
          <ul>
-		<!--Box data-->
-           <li>
+		{% for item in metadata %}
+			<li>
              <div class="icon">
-               <i class="fas fa-map-signs"></i>
+				 <i class="fas fa-{{item.icon}}"></i>
              </div>
              <div class="data">
-               {{my_address}}
+               {{item.data}}
              </div>
            </li>
-           <li>
-             <div class="icon">
-               <i class="fas fa-mobile-alt"></i>
-             </div>
-             <div class="data">
-               {{my_numberphone}}
-             </div>
-           </li>
-		<!--Box data-->
-           <li>
-             <div class="icon">
-               <i class="fas fa-envelope"></i>
-             </div>
-             <div class="data">
-               {{my_email}}
-             </div>
-           </li>
-		<!--endBox data-->
-         </ul>
+
+    	{% endfor %}
+		</ul>
        </div>
 
        <div class="resume_item resume_skills">
@@ -56,31 +40,13 @@
            <p class="bold">skill's</p>
          </div>
          <ul>
+		{% for item in listlendev %}
            <li>
              <div class="skill_name">
-               HTML
+				 {{item}}
              </div>
             </li>
-           <li>
-             <div class="skill_name">
-               CSS
-             </div>
-            </li>
-           <li>
-             <div class="skill_name">
-               SASS
-             </div>
-            </li>
-           <li>
-             <div class="skill_name">
-               JS
-             </div>
-            </li>
-           <li>
-             <div class="skill_name">
-               JQUERY
-             </div>
-            </li>
+    	{% endfor %}
          </ul>
        </div>
        <div class="resume_item resume_knows">
@@ -90,56 +56,13 @@
            <p class="bold">knows's</p>
          </div>
          <ul>
+		{% for item in listknows %}
            <li>
              <div class="knows_name">
-               HTML
+				 {{item}}
              </div>
-           </li>
-           <li>
-             <div class="knows_name">
-               CSS
-             </div>
-           </li>
-           <li>
-             <div class="knows_name">
-               SASS
-             </div>
-           </li>
-           <li>
-             <div class="knows_name">
-               JS
-             </div>
-           </li>
-           <li>
-             <div class="knows_name">
-               JQUERY
-             </div>
-           </li>
-                      <li>
-             <div class="knows_name">
-               HTML
-             </div>
-           </li>
-           <li>
-             <div class="knows_name">
-               CSS
-             </div>
-           </li>
-           <li>
-             <div class="knows_name">
-               SASS
-             </div>
-           </li>
-           <li>
-             <div class="knows_name">
-               JS
-             </div>
-           </li>
-           <li>
-             <div class="knows_name">
-               JQUERY
-             </div>
-           </li>
+            </li>
+    	{% endfor %}
          </ul>
        </div>
 
@@ -148,42 +71,17 @@
            <p class="bold">Social</p>
          </div>
          <ul>
-           <li>
+		{% for item in listsocial %}
+			<li>
              <div class="icon">
-               <i class="fab fa-facebook-square"></i>
+				 <i class="fab fa-{{item.icon}}"></i>
              </div>
              <div class="data">
-               <p class="semi-bold">Facebook</p>
-               <p>Stephen@facebook</p>
+				 <p class="semi-bold">{{item.name}}</p>
+				 <p>{{item.data}}</p>
              </div>
            </li>
-           <li>
-             <div class="icon">
-               <i class="fab fa-twitter-square"></i>
-             </div>
-             <div class="data">
-               <p class="semi-bold">Twitter</p>
-               <p>Stephen@twitter</p>
-             </div>
-           </li>
-           <li>
-             <div class="icon">
-               <i class="fab fa-youtube"></i>
-             </div>
-             <div class="data">
-               <p class="semi-bold">Youtube</p>
-               <p>Stephen@youtube</p>
-             </div>
-           </li>
-           <li>
-             <div class="icon">
-               <i class="fab fa-linkedin"></i>
-             </div>
-             <div class="data">
-               <p class="semi-bold">Linkedin</p>
-               <p>Stephen@linkedin</p>
-             </div>
-           </li>
+    	{% endfor %}
          </ul>
        </div>
      </div>
@@ -202,27 +100,15 @@
            <p class="bold">Work Experience</p>
          </div>
         <ul>
-            <li>
-                <div class="date">2013 - 2015</div> 
+		{% for item in listworks %}
+		     <li>
+				 <div class="date">{{item.datestart}} - {{item.dateend}}</div> 
                 <div class="info">
-                     <p class="semi-bold">Lorem ipsum dolor sit amet.</p> 
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
+					<p class="semi-bold">{{item.title}}</p> 
+					<p>{{item.data}}</p>
                 </div>
             </li>
-            <li>
-              <div class="date">2015 - 2017</div>
-              <div class="info">
-                     <p class="semi-bold">Lorem ipsum dolor sit amet.</p> 
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
-                </div>
-            </li>
-            <li>
-              <div class="date">2017 - Present</div>
-              <div class="info">
-                     <p class="semi-bold">Lorem ipsum dolor sit amet.</p> 
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
-                </div>
-            </li>
+    	{% endfor %}
         </ul>
     </div>
     <div class="resume_item resume_education">
@@ -230,20 +116,15 @@
            <p class="bold">Education</p>
          </div>
       <ul>
-            <li>
-                <div class="date">2010 - 2013</div> 
+		{% for item in listedu %}
+		     <li>
+				 <div class="date">{{item.datestart}} - {{item.dateend}}</div> 
                 <div class="info">
-                     <p class="semi-bold">Web Designing (Texas University)</p> 
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
+					<p class="semi-bold">{{item.title}}</p> 
+					<p>{{item.data}}</p>
                 </div>
             </li>
-            <li>
-              <div class="date">2000 - 2010</div>
-              <div class="info">
-                     <p class="semi-bold">Texas International School</p> 
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
-                </div>
-            </li>
+    	{% endfor %}
         </ul>
     </div>
     <div class="resume_item resume_hobby">
