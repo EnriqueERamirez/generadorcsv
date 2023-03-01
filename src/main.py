@@ -8,6 +8,14 @@ my_name = "Frank Andrade"
 context = {
         'my_name': my_name,
         'my_degree': "ingenieriai civil electronica",
+        'my_about': "askdjkasjdkasjdkj ajdkjakdjakdjk kasjdlajdoqwiujeokds aksdjaosed",
+        'title_project': "Proyecto",
+        'title_edu': "Proyecto",
+        'title_works': "Proyecto",
+        'title_about': "Proyecto",
+        'title_social': "Proyecto",
+        'title_knows': "Proyecto",
+        'title_skill': "Proyecto",
         'metadata': [
                 {
                 'icon': 'map-signs',
@@ -53,7 +61,6 @@ context = {
 
         'listlendev': ['python', 'java', '.net'],
         'listknows': ['math', 'fisics', 'electronics'],
-        'my_about': "askdjkasjdkasjdkj ajdkjakdjakdjk kasjdlajdoqwiujeokds aksdjaosed",
         }
 
 template_loader = jinja2.FileSystemLoader("template")

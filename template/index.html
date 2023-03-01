@@ -37,7 +37,7 @@
 		<!--Titulo de la seccion-->
 
          <div class="title">
-           <p class="bold">skill's</p>
+			 <p class="bold">{{title_skill}}</p>
          </div>
          <ul>
 		{% for item in listlendev %}
@@ -53,7 +53,7 @@
 		<!--Titulo de la seccion-->
 
          <div class="title">
-           <p class="bold">knows's</p>
+			 <p class="bold">{{title_knows}}</p>
          </div>
          <ul>
 		{% for item in listknows %}
@@ -68,7 +68,7 @@
 
        <div class="resume_item resume_social">
          <div class="title">
-           <p class="bold">Social</p>
+			 <p class="bold">{{title_social}}</p>
          </div>
          <ul>
 		{% for item in listsocial %}
@@ -91,13 +91,13 @@
 	<!--Box About-->
     <div class="resume_item resume_about">
         <div class="title">
-           <p class="bold">About us</p>
+			<p class="bold">{{title_about}}</p>
          </div>
         <p>{{my_about}}</p>
     </div>
     <div class="resume_item resume_work">
         <div class="title">
-           <p class="bold">Work Experience</p>
+			<p class="bold">{{title_works}}</p>
          </div>
         <ul>
 		{% for item in listworks %}
@@ -113,7 +113,7 @@
     </div>
     <div class="resume_item resume_education">
       <div class="title">
-           <p class="bold">Education</p>
+		  <p class="bold">{{title_edu}}</p>
          </div>
       <ul>
 		{% for item in listedu %}
@@ -129,7 +129,7 @@
     </div>
     <div class="resume_item resume_hobby">
       <div class="title">
-           <p class="bold">Project</p>
+		  <p class="bold">{{title_project}}</p>
          </div>
        <ul>
          <li><i class="fas fa-book"></i></li>
