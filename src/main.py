@@ -2,7 +2,8 @@ import os
 import jinja2
 import pdfkit
 from datetime import datetime
-
+import argparse
+import yaml
 my_name = "Frank Andrade"
 
 context = {
@@ -62,15 +63,29 @@ context = {
         'listlendev': ['python', 'java', '.net'],
         'listknows': ['math', 'fisics', 'electronics'],
         }
+def openyaml(filepath):
+    with open(filepath, 'r') as stream:
+        data_loaded = yaml.safe_load(stream)
+    return data_loaded
+def rendercv(context):
+    template_loader = jinja2.FileSystemLoader("template")
+    template_env = jinja2.Environment(loader=template_loader)
 
-template_loader = jinja2.FileSystemLoader("template")
-template_env = jinja2.Environment(loader=template_loader)
+    html_template = 'index.html'
+    template = template_env.get_template(html_template)
+    output_text = template.render(context)
+    print(output_text)
+    # config = pdfkit.configuration(wkhtmltopdf = r"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe")
+    # config = pdfkit.configuration(wkhtmltopdf='/usr/local/bin/wkhtmltopdf')
+    # output_pdf = 'pdf_generated.pdf'
+    # pdfkit.from_string(output_text, output_pdf, configuration=config, css='template/style.css')
+def getargscommandline():
+    parser = argparse.ArgumentParser(description='Generacion de cv para postulacion')
+    parser.add_argument('-f','--file', dest='accumulate', type=str, required=True,
+                    help='direccion del yaml con los datos cv')
+    parser.add_argument('-lng','--lenguage', type=int, default=1, help='lenguage en el que se generara el cv')
+    parser.add_argument('-o','--out', type=str, default='out', help='directorio de salida')
+    return parser.parse_args()
+if __name__=='__main__':
+    request = getargscommandline()
 
-html_template = 'index.html'
-template = template_env.get_template(html_template)
-output_text = template.render(context)
-print(output_text)
-# config = pdfkit.configuration(wkhtmltopdf = r"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe")
-# config = pdfkit.configuration(wkhtmltopdf='/usr/local/bin/wkhtmltopdf')
-# output_pdf = 'pdf_generated.pdf'
-# pdfkit.from_string(output_text, output_pdf, configuration=config, css='template/style.css')
