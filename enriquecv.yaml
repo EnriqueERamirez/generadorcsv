@@ -6,17 +6,17 @@ BasicInfo:
 # cat : 1) Investigacion 2) Trabajo
 About:
   - categoria: 1
-    Leng: 1
     texto: "Soy una persona curioso que espera lograr superarse continuamente a lo largo de esta vida"
-  - categoria: 2
     Leng: 1
+  - categoria: 2
     texto: "Soy una persona que busca solucionar y optimizar todos los problemas que se presenten"
+    Leng: 1
 #1) correo 2) numero 3) telefono
 Contact:
   - Name: "Linkeding"
     Type: 1
     Url: ""
-    Leng: ""
+    Leng: 1
     categoria: 1
 # Areas de trabajo: 1) electronica 2) electricidad 3) informatica negocio 4) informatica maquina 5) informatica altonivel 6) arquitectura software 7) economica 8) liderasgo 9)eduacion 10) analisis de datos 
 # 11) DB 12) salud 13) intrumentacion 14) QA 15) hacking 16) QAE 17) Operaciones 18) comunicaciones 19) Inteligencia Artifical 20) Robotica 21) Sensores 22) Simulacion 23) Matematica aplicada 24) Fisica
@@ -51,6 +51,22 @@ LenguagePrograming:
   - name: "esambler"
     Category: [4,6]
     Level: 8
+  - name: "asp 2.0"
+    Category: [4,6]
+    Level: 8
+  - name: "net 3.1"
+    Category: [4,6]
+    Level: 8
+  - name: "net 5"
+    Category: [4,6]
+    Level: 8
+  - name: "net 6"
+    Category: [4,6]
+    Level: 8
+  - name: "net 7"
+    Category: [4,6]
+    Level: 8
+
 LenguageDB:
   - name: "Sql"
     Level: 8

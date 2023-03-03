@@ -5,18 +5,31 @@ from datetime import datetime
 import argparse
 import yaml
 my_name = "Frank Andrade"
+titlelist = { 
+             '1':{
+                'title_project': "Proyecto",
+                'title_edu': "Educacion",
+                'title_works': "Experiencia",
+                'title_about': "Acerca de mi",
+                'title_social': "Informcacion social",
+                'title_knows': "Conocimiento",
+                'title_skill': "Lenguages programacion",
+            },
+             '2':{
+                'title_project': "Proyecto",
+                'title_edu': "Proyecto",
+                'title_works': "Proyecto",
+                'title_about': "Proyecto",
+                'title_social': "Proyecto",
+                'title_knows': "Proyecto",
+                'title_skill': "Proyecto",
+            }
 
+        }
 context = {
         'my_name': my_name,
         'my_degree': "ingenieriai civil electronica",
         'my_about': "askdjkasjdkasjdkj ajdkjakdjakdjk kasjdlajdoqwiujeokds aksdjaosed",
-        'title_project': "Proyecto",
-        'title_edu': "Proyecto",
-        'title_works': "Proyecto",
-        'title_about': "Proyecto",
-        'title_social': "Proyecto",
-        'title_knows': "Proyecto",
-        'title_skill': "Proyecto",
         'metadata': [
                 {
                 'icon': 'map-signs',
@@ -63,6 +76,12 @@ context = {
         'listlendev': ['python', 'java', '.net'],
         'listknows': ['math', 'fisics', 'electronics'],
         }
+def CreateContext(datayaml, listargs):
+    context = {}
+    _listtitle = titlelist[str(listargs.lenguage)]
+    for key in _listtitle:
+        context[key] = _listtitle[key]
+    return context
 def openyaml(filepath):
     with open(filepath, 'r') as stream:
         data_loaded = yaml.safe_load(stream)
@@ -81,11 +100,16 @@ def rendercv(context):
     # pdfkit.from_string(output_text, output_pdf, configuration=config, css='template/style.css')
 def getargscommandline():
     parser = argparse.ArgumentParser(description='Generacion de cv para postulacion')
-    parser.add_argument('-f','--file', dest='accumulate', type=str, required=True,
+    parser.add_argument('-f','--file', type=str, required=True,
                     help='direccion del yaml con los datos cv')
     parser.add_argument('-lng','--lenguage', type=int, default=1, help='lenguage en el que se generara el cv')
+    parser.add_argument('-tpwork','--typework', type=int, default=1, help='Tipo de trabajo que se desea postular')
+    parser.add_argument('-arw','--areawork', type=int, default=1, help='Area al que se desea al postular')
+    parser.add_argument('-lnsp','--lenguageSpeak', type=int, default=1, help='Lenguage cultural enfoco')
     parser.add_argument('-o','--out', type=str, default='out', help='directorio de salida')
     return parser.parse_args()
 if __name__=='__main__':
     request = getargscommandline()
+    yamlfile = openyaml(request.file)
+    context = CreateContext(yamlfile, request)
 
