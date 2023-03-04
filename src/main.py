@@ -27,9 +27,6 @@ titlelist = {
 
         }
 context = {
-        'my_name': my_name,
-        'my_degree': "ingenieriai civil electronica",
-        'my_about': "askdjkasjdkasjdkj ajdkjakdjakdjk kasjdlajdoqwiujeokds aksdjaosed",
         'metadata': [
                 {
                 'icon': 'map-signs',
@@ -81,6 +78,16 @@ def CreateContext(datayaml, listargs):
     _listtitle = titlelist[str(listargs.lenguage)]
     for key in _listtitle:
         context[key] = _listtitle[key]
+    #create basic info
+    for databasic in datayaml['BasicInfo']:
+        if databasic['Leng'] == listargs.lenguage:
+            context['my_name'] = databasic['Name']
+            context['my_degree'] = databasic['Degree']
+            break
+    for about in datayaml['About']:
+        if about['Leng'] == listargs.lenguage and about['categoria'] == listargs.typework:
+            context['my_about'] = about['texto']
+            break
     return context
 def openyaml(filepath):
     with open(filepath, 'r') as stream:
