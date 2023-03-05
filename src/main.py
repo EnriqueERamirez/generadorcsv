@@ -70,7 +70,6 @@ context = {
                 },
             ],
 
-        'listlendev': ['python', 'java', '.net'],
         'listknows': ['math', 'fisics', 'electronics'],
         }
 def CreateContext(datayaml, listargs):
@@ -88,6 +87,12 @@ def CreateContext(datayaml, listargs):
         if about['Leng'] == listargs.lenguage and about['categoria'] == listargs.typework:
             context['my_about'] = about['texto']
             break
+    #lenguage list create
+    lenp = []
+    for lprogram in datayaml['LenguagePrograming']:
+        if listargs.lenguageProgram in lprogram['Category']:
+            lenp.append(lprogram['name'])
+    context['listlendev'] = lenp
     return context
 def openyaml(filepath):
     with open(filepath, 'r') as stream:
@@ -113,6 +118,7 @@ def getargscommandline():
     parser.add_argument('-tpwork','--typework', type=int, default=1, help='Tipo de trabajo que se desea postular')
     parser.add_argument('-arw','--areawork', type=int, default=1, help='Area al que se desea al postular')
     parser.add_argument('-lnsp','--lenguageSpeak', type=int, default=1, help='Lenguage cultural enfoco')
+    parser.add_argument('-lngp','--lenguageProgram', type=int, default=6, help='Lenguajes de programacion segun area')
     parser.add_argument('-o','--out', type=str, default='out', help='directorio de salida')
     return parser.parse_args()
 if __name__=='__main__':
