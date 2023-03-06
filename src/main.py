@@ -14,6 +14,7 @@ titlelist = {
                 'title_social': "Informcacion social",
                 'title_knows': "Conocimiento",
                 'title_skill': "Lenguages programacion",
+                'title_tecno': "Lenguages programacion",
             },
              '2':{
                 'title_project': "Proyecto",
@@ -23,6 +24,7 @@ titlelist = {
                 'title_social': "Proyecto",
                 'title_knows': "Proyecto",
                 'title_skill': "Proyecto",
+                'title_tecno': "Lenguages programacion",
             }
 
         }
@@ -93,6 +95,17 @@ def CreateContext(datayaml, listargs):
         if listargs.lenguageProgram in lprogram['Category']:
             lenp.append(lprogram['name'])
     context['listlendev'] = lenp
+    teorylist = []
+    for teory in datayaml['TeoryManage']:
+        if listargs.lenguageProgram in teory['Category']:
+            teorylist.append(teory['name'])
+    context['listknows'] = teorylist
+    tecnologylist = []
+    for tecn in datayaml['TecnologiUse']:
+        if listargs.lenguageProgram in tecn['Category']:
+            tecnologylist.append(tecn['name'])
+    context['listtecno'] = tecnologylist
+
     return context
 def openyaml(filepath):
     with open(filepath, 'r') as stream:

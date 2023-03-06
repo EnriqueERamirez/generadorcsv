@@ -135,7 +135,34 @@ body {
   color: black;
 
 }
+.resume .resume_left .resume_tecno ul {
+  columns: 4;
+  column-gap: 1rem;
+}
+.resume .resume_left .resume_tecno li {
+  column-span: all;
+}
+.resume .resume_left .resume_tecno li:nth-last-child(n+5),
+.resume .resume_left .resume_tecno li:nth-last-child(n+5) ~ * {
+  column-span: none;
+}
+.resume .resume_left .resume_tecno ul li {
+  display: flex;
+  margin-bottom: 10px;
+  margin-right: 1px;
+  color: #b1eaff;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.resume .resume_left .resume_tecno ul li .tecno_name {
+  width: auto;
+  border: solid 0.2em;
+  border-color:#32cb03;
+  background-color: #43f20e;
+  font-size: 12px;
+  color: black;
+}
 .resume .resume_left .resume_knows ul {
   columns: 4;
   column-gap: 1rem;
