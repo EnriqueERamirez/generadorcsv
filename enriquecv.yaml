@@ -52,21 +52,7 @@ LenguagePrograming:
   - name: "vbasic"
     Category: [4,6]
     Level: 8
-    Category: [4,6]
-    Level: 8
-  - name: "asp 2.0"
-    Category: [4,6]
-    Level: 8
-  - name: "net 3.1"
-    Category: [4,6]
-    Level: 8
-  - name: "net 5"
-    Category: [4,6]
-    Level: 8
-  - name: "net 6"
-    Category: [4,6]
-    Level: 8
-  - name: "net 7"
+  - name: "c#"
     Category: [4,6]
     Level: 8
 
@@ -82,53 +68,102 @@ TecnologiUse:
   - Name: "Docker"
     Level: 4 
     Category: [5]
+  - name: "asp 2.0"
+    Category: [4,6]
+    Level: 8
+  - name: "net 3.1"
+    Category: [4,6]
+    Level: 8
+  - name: "net 5"
+    Category: [4,6]
+    Level: 8
+  - name: "net 6"
+    Category: [4,6]
+    Level: 8
+  - name: "net 7"
+    Category: [4,6]
+    Level: 8
 TeoryManage:
   - Name: "Circuito DC"
     Category: [3]
+    Leng: 1
+  - Name: "AGILE"
+    Category: [4]
+    Leng: 1
+  - Name: "DEVOPS"
+    Category: [4]
+    Leng: 1
+
 Skills:
 NormManage:
+#TypeInfo Categoria
 #1) terminado 2) proceso 3) titulacion
 Study:
-  - Name: "Ingenieria civil electronica"
+  - Name: "Ingenieria Civil Electronica"
     Institute: "Universidad austral de chile"
     DateRange: [2017, 2023]
     Status: 3
 Jobs:
-  - Posicion: ""
-    RangeDate: ["",""]
-    Description: ""
-    Company: ""
-    Category: 3
+  - Posicion: "Developer Junior and QA"
+    RangeDate: [2022,0]
+    Description: "Desarrollo de aplicaciones de negocio tales como 
+      frontend y backend, para entidades financieras (bancos y aseguradoras), 
+      utilizando la tecnología net para creación de microservicios y algoritmos 
+      de encriptación, además de desarrollar las bases de datos respectivas. Las 
+      aplicaciones desarrolladas por los clientes eran probadas 
+      atraves de desarrollos realizados en gherkin y selenium, utilizando los 
+      estándares istqb. Durante la estancia dentro de la compañía se trabajó con 
+      la metodología agile y devops."
+    Company: "IBM chile"
+    Category: [4]
+    TypeInfo: 2
+    Leng: 1
+  - Posicion: "Periodo de practica"
+    RangeDate: [2019,2022]
+    Description: "Desarrollo de dispositivos inteligentes"
+    Company: "IBM chile, Jade Inversiones, Desafio AVANTE, "
+    Category: [4]
+    TypeInfo: 2
+    Leng: 1
+
 #1) private 2) public
 Proyects:
   - Name: ""
     Category: ""
     Url: ""
-    Category: ""
+    Info: 1
+    Category: [4]
 Activitys:
   - name: "IEEE-extreme"
     RangeDate: ["",""]
     Description: ""
+    Category: [4]
 Papers:
   - Name: ""
     Doi: ""
     Abstract: ""
-    Category: 3
+    Category: [4]
 Books:
+    Category: [4]
 Blogs:
   - Name: ""
-    Category: 3
     Description: ""
     Url: ""
+    Category: [4]
 Certificates:
   - name: "AWS"
     Category: [4,6]
     NumberSerie: 123123
     Url: ""
+    Category: [4]
 Companys:
+    Category: [4]
 Patents:
+    Category: [4]
 Honor:
+    Category: [4]
 Socity:
   - Name: "IEEE"
     Numberacount: 123123123
+    Category: [4]
   
