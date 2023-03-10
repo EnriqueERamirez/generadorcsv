@@ -102,6 +102,7 @@ Study:
   - Name: "Ingenieria Civil Electronica"
     Institute: "Universidad austral de chile"
     DateRange: [2017, 2023]
+    Data: "Concepto de un microscada"
     Status: 3
 Jobs:
   - Posicion: "Developer Junior and QA"

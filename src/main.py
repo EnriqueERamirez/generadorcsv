@@ -63,16 +63,6 @@ context = {
                 'data': "asdasdasdasdasdasdasdasdasdasdasdasdasdasdasd",
                 },
             ],
-        'listedu': [
-                {
-                'datestart': '2011',
-                'dateend': '2012',
-                'title': 'Test',
-                'data': "asdasdasdasdasdasdasdasdasdasdasdasdasdasdasd",
-                },
-            ],
-
-        'listknows': ['math', 'fisics', 'electronics'],
         }
 def CreateContext(datayaml, listargs):
     context = {}
@@ -105,7 +95,15 @@ def CreateContext(datayaml, listargs):
         if listargs.lenguageProgram in tecn['Category']:
             tecnologylist.append(tecn['name'])
     context['listtecno'] = tecnologylist
-
+    ListEduc = []
+    for edu in datayaml['Jobs']:
+       auxdic = {}
+       auxdic['datestart'] = edu['DateRange'][0]
+       auxdic['dateend'] = edu['DateRange'][1]
+       auxdic['title'] = edu['Name']
+       auxdic['data'] = edu['Data']
+       ListEduc.append(auxdic)
+    context['listedu'] = ListEduc
     return context
 def openyaml(filepath):
     with open(filepath, 'r') as stream:
