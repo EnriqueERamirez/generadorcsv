@@ -28,44 +28,29 @@ titlelist = {
             }
 
         }
-context = {
-        'metadata': [
-                {
-                'icon': 'map-signs',
-                'data': "direccion de prueba",
-                },
-                {
-                'icon': 'mobile-alt',
-                'data': "+58 99123123",
-                },
-                {
-                'icon': 'envelope',
-                'data': "test@gmail.com",
-                },
-            ],
+icondict = {
+        'Localitation': 'map-signs',
+        'mobile': 'mobile-alt',
+        'Email': 'envelope',
+        'Facebook': 'facebook-square',
+        'Twitter': 'twitter-square',
+        }
+def CreateContext(datayaml, listargs):
+    context = { 
         'listsocial': [
                 {
                 'icon': 'facebook-square',
                 'name': 'Facebook',
-                'data': "Stephen@facebook",
+                'data': "enrique@facebook",
                 },
                 {
                 'icon': 'twitter-square',
                 'name': 'Twitter',
-                'data': "Stephen@twitter",
+                'data': "enrique@twitter",
                 },
             ],
-        'listworks': [
-                {
-                'datestart': '2011',
-                'dateend': '2012',
-                'title': 'Test',
-                'data': "asdasdasdasdasdasdasdasdasdasdasdasdasdasdasd",
-                },
-            ],
-        }
-def CreateContext(datayaml, listargs):
-    context = {}
+
+            }
     _listtitle = titlelist[str(listargs.lenguage)]
     for key in _listtitle:
         context[key] = _listtitle[key]
@@ -96,7 +81,7 @@ def CreateContext(datayaml, listargs):
             tecnologylist.append(tecn['name'])
     context['listtecno'] = tecnologylist
     ListEduc = []
-    for edu in datayaml['Jobs']:
+    for edu in datayaml['Study']:
        auxdic = {}
        auxdic['datestart'] = edu['DateRange'][0]
        auxdic['dateend'] = edu['DateRange'][1]
@@ -104,6 +89,30 @@ def CreateContext(datayaml, listargs):
        auxdic['data'] = edu['Data']
        ListEduc.append(auxdic)
     context['listedu'] = ListEduc
+    ListJobs = []
+    for job in datayaml['Jobs']:
+       auxdic = {}
+       auxdic['datestart'] = job['RangeDate'][0]
+       auxdic['dateend'] = job['RangeDate'][1]
+       auxdic['title'] = job['Posicion']
+       auxdic['data'] = job['Description']
+       ListJobs.append(auxdic)
+    context['listworks'] = ListJobs
+    context['metadata'] = [
+                    {
+                    'icon': 'map-signs',
+                    'data': datayaml['BasicInfo']['Localitation'],
+                    },
+                    {
+                    'icon': 'mobile-alt',
+                    'data': datayaml['BasicInfo']['mobile'],
+                    },
+                    {
+                    'icon': 'envelope',
+                    'data': datayaml['BasicInfo']['Email'],
+                    },
+                ]
+ 
     return context
 def openyaml(filepath):
     with open(filepath, 'r') as stream:
@@ -136,4 +145,6 @@ if __name__=='__main__':
     request = getargscommandline()
     yamlfile = openyaml(request.file)
     context = CreateContext(yamlfile, request)
+    rendercv(context)
+
 

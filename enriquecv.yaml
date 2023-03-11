@@ -6,6 +6,9 @@ BasicInfo:
 BasicInfo:
   - Name: "Enrique Ramirez"
     Degree: "Ingenieria civil electronica"
+    mobile: "+56 971329774"
+    Email: "enrique.emanuel.ramirez.flores@gmail.com"
+    Localitation: "Chile"
     Leng: 1
 # cat : 1) Investigacion 2) Trabajo
 About:
