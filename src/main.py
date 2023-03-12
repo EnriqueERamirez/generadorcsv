@@ -98,18 +98,19 @@ def CreateContext(datayaml, listargs):
        auxdic['data'] = job['Description']
        ListJobs.append(auxdic)
     context['listworks'] = ListJobs
+    print(datayaml['BasicInfo'][0]['Localitation'])
     context['metadata'] = [
                     {
                     'icon': 'map-signs',
-                    'data': datayaml['BasicInfo']['Localitation'],
+                    'data': datayaml['BasicInfo'][0]['Localitation'],
                     },
                     {
                     'icon': 'mobile-alt',
-                    'data': datayaml['BasicInfo']['mobile'],
+                    'data': datayaml['BasicInfo'][0]['mobile'],
                     },
                     {
                     'icon': 'envelope',
-                    'data': datayaml['BasicInfo']['Email'],
+                    'data': datayaml['BasicInfo'][0]['Email'],
                     },
                 ]
  
