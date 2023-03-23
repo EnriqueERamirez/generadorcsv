@@ -35,6 +35,13 @@ icondict = {
         'Facebook': 'facebook-square',
         'Twitter': 'twitter-square',
         }
+#Create function get data from input dictory data, string section, and return list data
+def getdatafromdict(data, section, categoria, listargs):
+    listdata = []
+    for item in data[section]:
+        if listargs.lenguageProgram in categoria:
+            listdata.append(item['name'])
+    return listdata
 def CreateContext(datayaml, listargs):
     context = { 
         'listsocial': [
@@ -64,27 +71,22 @@ def CreateContext(datayaml, listargs):
         if about['Leng'] == listargs.lenguage and about['categoria'] == listargs.typework:
             context['my_about'] = about['texto']
             break
-    #lenguage list create
-    lenp = []
-    for lprogram in datayaml['LenguagePrograming']:
-        if listargs.lenguageProgram in lprogram['Category']:
-            lenp.append(lprogram['name'])
+    #lenguage list create for lenguage programing, teorymanage, tecnologyuse. using getdatafromdict function
+    lenp = getdatafromdict(datayaml, 'LenguagePrograming', listargs.lenguageProgram, listargs)
+    teorylist = getdatafromdict(datayaml, 'TeoryManage', listargs.lenguageProgram, listargs)
+    tecnologylist = getdatafromdict(datayaml, 'TecnologiUse', listargs.lenguageProgram, listargs)
     context['listlendev'] = lenp
-    teorylist = []
-    for teory in datayaml['TeoryManage']:
-        if listargs.lenguageProgram in teory['Category']:
-            teorylist.append(teory['name'])
     context['listknows'] = teorylist
-    tecnologylist = []
-    for tecn in datayaml['TecnologiUse']:
-        if listargs.lenguageProgram in tecn['Category']:
-            tecnologylist.append(tecn['name'])
     context['listtecno'] = tecnologylist
+    #set now dataend if datarange[1] is 0
     ListEduc = []
     for edu in datayaml['Study']:
        auxdic = {}
        auxdic['datestart'] = edu['DateRange'][0]
-       auxdic['dateend'] = edu['DateRange'][1]
+        if edu['DateRange'][1] == 0:
+            auxdic['dateend'] = datetime.now().strftime("%Y-%m-%d")
+        else:
+            auxdic['dateend'] = edu['DateRange'][1]
        auxdic['title'] = edu['Name']
        auxdic['data'] = edu['Data']
        ListEduc.append(auxdic)
@@ -93,7 +95,10 @@ def CreateContext(datayaml, listargs):
     for job in datayaml['Jobs']:
        auxdic = {}
        auxdic['datestart'] = job['RangeDate'][0]
-       auxdic['dateend'] = job['RangeDate'][1]
+        if job['rangeDate'][1] == 0:
+            auxdic['dateend'] = datetime.now().strftime("%Y-%m-%d")
+        else:
+            auxdic['dateend'] = job['RangeDate'][1]
        auxdic['title'] = job['Posicion']
        auxdic['data'] = job['Description']
        ListJobs.append(auxdic)
